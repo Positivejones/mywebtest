@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Custom Video Controls</title>
+    <style>
+        #custom-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .control-btn {
+            background-color: #111;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 20px;
+        }
+        .control-btn:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="hold">
+        <h4 class="jump">VIDEO</h4>
+        <video id="video1" width="420" height="315">
+            <source src="video1.mp4" type="video/mp4">
+            <source src="video1.ogg" type="video/ogg">
+            Your browser does not support HTML video.
+        </video>
+        <div id="custom-controls">
+            <button class="control-btn" onclick="playPause()">Play/Pause</button>
+            <button class="control-btn" onclick="stopVideo()">Stop</button>
+            <button class="control-btn" onclick="muteUnmute()">Mute/Unmute</button>
+        </div>
+        <input id="me" type="text" placeholder="enter video URL here">
+        <button class="btn1" onclick="changeVideo()">Click me</button>
+        <button class="btn2" onclick="recallVideo()">Recall Random Video</button>
+    </div>
+    <div id="message"></div>
+    <img id="cat" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Dancing Cat">
+    <script>
+        let videoLinks = [];
+        let lastVideo = "";
+        const video = document.getElementById('video1');
+
+        function playPause() {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+
+        function stopVideo() {
+            video.pause();
+            video.currentTime = 0;
+        }
+
+        function muteUnmute() {
+            video.muted = !video.muted;
+        }
+
+        function changeVideo() {
+            const input = document.getElementById("me").value;
+            if (input) {
+                videoLinks.push(input);
+                saveLinks();
+                updateVideo(input);
+            }
+        }
+
+        function updateVideo(link) {
+            const sources = video.getElementsByTagName('source');
+            sources[0].src = link + ".mp4";
+            sources[1].src = link + ".ogg";
+            video.load();
+            video.style.width = "420px";
+            video.style.height = "315px";
+            document.getElementById("message").innerText = "Video source changed to: " + link;
+        }
+
+        function recallVideo() {
+            if (videoLinks.length > 0) {
+                let randomIndex;
+                do {
+                    randomIndex = Math.floor(Math.random() * videoLinks.length);
+                } while (videoLinks[randomIndex] === lastVideo);
+                lastVideo = videoLinks[randomIndex];
+                updateVideo(lastVideo);
+            } else {
+                document.getElementById("message").innerText = "No video links stored.";
+            }
+        }
+
+        function saveLinks() {
+            const json = JSON.stringify(videoLinks);
+            localStorage.setItem('videoLinks', json);
+        }
+
+        function loadLinks() {
+            const json = localStorage.getItem('videoLinks');
+            if (json) {
+                videoLinks = JSON.parse(json);
+            }
+        }
+
+        window.onload = loadLinks;
+    </script>
+</body>
+</html>
