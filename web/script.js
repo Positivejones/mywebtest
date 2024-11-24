@@ -46,3 +46,38 @@
         }
 
         window.onload = loadLinks;
+
+document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById("music");
+
+            function toggleMusic() {
+                if (audio.paused) {
+                    audio.play();
+                } else {
+                    audio.pause();
+                }
+            }
+
+            function increaseVolume() {
+                if (audio.volume < 1) {
+                    audio.volume += 0.2;
+                    audio.volume = Math.min(1, audio.volume); // Ensure volume doesn't exceed 1
+                }
+            }
+
+            function decreaseVolume() {
+                if (audio.volume > 0) {
+                    audio.volume -= 0.2;
+                    audio.volume = Math.max(0, audio.volume); // Ensure volume doesn't go below 0
+                }
+            }
+
+            // Assign the functions to the window object to make them accessible from HTML
+            window.toggleMusic = toggleMusic;
+            window.increaseVolume = increaseVolume;
+            window.decreaseVolume = decreaseVolume;
+
+            audio.play().catch(error => {
+                console.log('Autoplay was prevented. Showing play button.');
+            });
+        });
