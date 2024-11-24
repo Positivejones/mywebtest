@@ -72,7 +72,7 @@ input {
     border-radius: 10px;
 }
 
-me1, .me2 {
+.me1, .me2 {
     font-family: "Bebas Neue", sans-serif;
     font-size: 30px;
     font-style: normal;
