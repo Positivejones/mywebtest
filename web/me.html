@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        #cat {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="hold">
+        <h4>VIDEO</h4>
+        <video controls id="video1" width="420">
+            <source src="video1.mp4" type="video/mp4">
+            <source src="video1.ogg" type="video/ogg">
+            Your browser does not support HTML video.
+        </video>
+        <input id="me" type="text" placeholder="enter video URL here">
+        <button onclick="changeVideo()">Click me</button>
+        <button onclick="recallVideo()">Recall Random Video</button>
+    </div>
+    <div id="message"></div>
+    <img id="cat" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Dancing Cat">
+    <script>
+        
+    </script>
+</body>
+</html>
