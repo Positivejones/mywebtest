@@ -132,3 +132,4 @@ input {
     display: inline-block; 
     animation: jump 1s infinite; 
 }
+@media (max-width: 768px) { body { font-size: 14px; } video { width: 100%; height: auto; } input, .btn1, .btn2 { width: 100%; margin-bottom: 10px; } #cat { width: 50px; height: 50px; } }
