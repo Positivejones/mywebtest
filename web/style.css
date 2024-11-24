@@ -72,6 +72,27 @@ input {
     border-radius: 10px;
 }
 
+me1, .me2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    position: relative;
+    bottom: 10px;
+    top: 100px;
+    right: 0px;
+    left: 0px;
+    width: 120px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    background: #5d02ef;
+    cursor: crosshair;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
 .btn2 {
     right: 250px;
 }
