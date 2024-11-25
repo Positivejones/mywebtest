@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Document</title>
+</head>
+<body>
+  <h4 class="jump">VIDEO</h4>
+   <div class="message" id="hold">
+    <video controls id="video1" width="420">
+        <source src="https://cdn.discordapp.com/attachments/1128176235856539698/1283110125610991716/Felix_ODair_Edit_-_VJ_Narvent_-_Memory_Reboot_bosinn_felixodair.mp4?ex=674404ac&is=6742b32c&hm=944a044ccf833e3e0a086ef548f1d1ca4c22bd2d453fc7176212dc08b8e41137&" type="video/mp4">
+        <source src="video1.ogg" type="video/ogg">
+        Your browser does not support HTML video.
+      </video>
+      <input id="me" type="text" placeholder="enter video URL here" >
+      <button class="btn1" onclick="changeVideo()">Click me</button> 
+      <button class="btn2" onclick="recallVideo()">Recall Random Video</button>
+   </div>
+    <div  id="message"></div>
+    <script src="script.js">
+    </script>
+    <img id="cat" src="./img/jojodance.gif" alt="Dancing Cat">
+
+    <audio autoplay id="music" src="https://ve34.aadika.xyz/download/1F3OGIFnW1k/mp3/128/1732494464/127f9ed974005908101a71e7ffd7a0bb087ac604d732649cc17f9b8f83cbcb9e/1?f=X2Download.app"></audio>
+
+    <div >
+      <button class="me1" onclick="decreaseVolume()">-</button>
+      <button class="me2" onclick="increaseVolume()">+</button>
+    </div>
+</body>
+</html>
