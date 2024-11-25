@@ -77,7 +77,7 @@
             }
 
             // Assign the functions to the window object to make them accessible from HTML
-            window.playme = playme;
+            window.toggleMusic = playme;
             window.increaseVolume = increaseVolume;
             window.decreaseVolume = decreaseVolume;
 
