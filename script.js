@@ -54,7 +54,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const audio = document.getElementById("music");
 
-            function playme() {
+            function playmee() {
                 if (audio.paused) {
                     audio.play();
                 } else {
@@ -77,7 +77,7 @@
             }
 
             // Assign the functions to the window object to make them accessible from HTML
-            window.toggleMusic = playme;
+            window.playmee = playmee;
             window.increaseVolume = increaseVolume;
             window.decreaseVolume = decreaseVolume;
 
