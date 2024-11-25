@@ -54,7 +54,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const audio = document.getElementById("music");
 
-            function toggleMusic() {
+            function playme() {
                 if (audio.paused) {
                     audio.play();
                 } else {
